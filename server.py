@@ -16,5 +16,11 @@ def clear_session():
     # session.pop("visit_count")
     session.clear()
     return redirect("/")
+
+@app.route("/increment")
+def add_2_visits():
+    session['visit_count'] = session.get('visit_count', 1) + 1
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)
