@@ -8,12 +8,33 @@
     <title>Session Counter</title>
 </head>
 <body>
-    <h1 class="bg-primary text-center text-light col-4 my-5 p-3 my-4 mx-auto">Counter</h1>
-    <p class="text-center col-4 my-4 mx-auto">Number of visit(s): {{visits_count}}</p>
+    <h1 class="bg-primary text-center text-light col-4 my-5 p-3 my-4 mx-auto">You have visited this page: {{visit}} times!</h1>
+    <p class="text-center col-4 my-4 mx-auto">Your visit counter is: {{counter}}</p>
     <div class="col-6 row justify-content-around mx-auto">
-        <a class="btn btn-success col-2" href="/increment">Add 2 Visit</a>
-        <a class="btn btn-danger col-2" href="/destroy-session">Reset</a>
+        <a class="btn btn-success col-4" href="/increment-by-two">Add 2 Visit</a>
+        <a class="btn btn-danger col-4" href="/reset-counter">Reset Visits Count</a>
     </div>
+    
+    <!-- <form action="/increment-by-val" method="post" class="row g-3">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="increment_value" class="form-labe">Add visits by:</label>
+                <input type="number" class="form-control" name="increment_value" value="">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </form> -->
+    <form class="col-6 row justify-content-around p-3 mx-auto">
+            <label for="increment_value" class="form-label">Add visits by:</label>
+            <input type="number" class="form-control-plaintext" name="increment_value">
+            <button type="submit" class="btn btn-primary col-4 mb-3">Add</button>
+    </form>
+    <div class="text-center">
+        <a class="btn btn-warning" href="/reset-session">Reset Number of Visits</a>
+    </div>
+
     
 </body>
 </html>
